@@ -1,18 +1,31 @@
 "use client";
 import styles from "./style.module.css";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { opacity, background } from "./anim";
-
 import Nav from "@/components/Header/Nav";
+
 export default function index() {
   const [isActive, setIsActive] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => {
+      // Hide once scrolled roughly past the first viewport (MainPage height)
+      setIsVisible(window.scrollY < window.innerHeight * 0.8);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className={styles.header}>
+    <div
+      className={`${styles.header} ${!isVisible ? styles.headerHidden : ""}`}
+    >
       <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
-
       <div className={styles.bar}>
         <div
           onClick={() => {
@@ -41,7 +54,6 @@ export default function index() {
           className={styles.shopContainer}
         ></motion.div>
       </div>
-
       <motion.div
         variants={background}
         initial="initial"

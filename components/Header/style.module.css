@@ -5,6 +5,17 @@
     box-sizing: border-box;
     padding: 10px;
     z-index: 50;
+    opacity: 1;
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    pointer-events: auto;
+}
+
+.headerHidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
 }
 .background {
     background-color: black;

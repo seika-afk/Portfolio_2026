@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import TextDisperse from "./TextDisperse/textDisperse";
 
+import Header from "@/components/Header";
 const ROLES = [
   "Full stack developer",
   "Agentic developer",
@@ -112,7 +113,8 @@ const MainPage: React.FC = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
         .font-display { font-family: 'Bodoni Moda', Georgia, serif; }
-        .font-body { font-family: 'Inter', system-ui, sans-serif; }
+        .font-body { font-family:
+        'Inter', system-ui, sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
         @keyframes blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
         .cursor-blink { animation: blink 1s step-end infinite; }
@@ -150,6 +152,7 @@ const MainPage: React.FC = () => {
       {/* CURSOR */}
       <div id="custom-cursor" ref={cursorRef} />
 
+      <Header />
       {/* top bar */}
       <header className="relative opacity-0 z-10 flex items-center justify-center mb-9 px-6 md:px-16 pt-8 font-mono text-[11px] tracking-[0.18em] uppercase">
         <a

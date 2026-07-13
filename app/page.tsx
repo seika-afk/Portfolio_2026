@@ -1,11 +1,11 @@
 import MainPage from "@/components/mainPage";
-import Header from "@/components/Header";
+import SecondPage from "@/components/SecondPage/SecondPage";
+import ThirdPage from "@/components/ThirdPage/ThirdPage";
 export default function Home() {
   return (
     <div>
-      <Header />
       <MainPage />
-      
+      <SecondPage />
     </div>
   );
 }
