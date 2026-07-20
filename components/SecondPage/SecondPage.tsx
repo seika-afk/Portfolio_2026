@@ -92,9 +92,9 @@ export default function SecondPage() {
             key={section.title}
             className={`sticky ${tops[i]} ${zIndexes[i]} ${section.bg} h-screen rounded-2xl overflow-hidden flex flex-col border border-white/5`}
           >
-            <div className="flex items-center justify-between shrink-0 h-[80px] px-10">
+            <div className="flex items-center justify-between shrink-0 h-[100px] px-10">
               <h2
-                className={`font-display font-medium tracking-tight m-0 text-[clamp(2rem,5vw,3.5rem)] ${section.textColor}`}
+                className={`font-display font-medium tracking-tight m-0 text-[clamp(2.5rem,7vw,5rem)] ${section.textColor}`}
               >
                 {section.title}
               </h2>
@@ -135,7 +135,7 @@ export default function SecondPage() {
           >
             <div className="flex items-center justify-between shrink-0 h-[80px] px-10">
               <h2
-                className={`font-display font-medium tracking-tight m-0 text-[clamp(2rem,5vw,3.5rem)] ${section.textColor}`}
+                className={`font-display font-medium tracking-tight m-0 text-[clamp(1.25rem,2.5vw,1.75rem)] ${section.textColor}`}
               >
                 {section.title}
               </h2>
@@ -176,10 +176,7 @@ export default function SecondPage() {
         ),
       )}
 
-      {/* ThirdPage — now part of the same sticky stack, as the final panel */}
-      <div className={`sticky  ${zIndexes[5]} h-screen overflow-hidden`}>
-        <ThirdPage />
-      </div>
+      {/* ThirdPage — final sticky panel, scrolls internally if content overflows */}
     </div>
   );
 }
