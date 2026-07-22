@@ -8,15 +8,15 @@ import gsap from "gsap";
 const phrase =
   " Making cool stuff is a source of  joy for me,I enjoy Creating them, decorating and designing them and making things that seem cool possible. and I would love to work with you with same energy :>";
 export default function ScrollText() {
-  const refs = useRef([]);
-  const container = useRef(null);
-  const body = useRef(null);
+  const refs = useRef<(HTMLSpanElement | null)[]>([]);
+  const container = useRef<HTMLElement | null>(null);
+  const body = useRef<HTMLDivElement | null>(null);
   refs.current = [];
 
-  const splitWords = (phrase) => {
+  const splitWords = (text: string) => {
     let letterIndex = 0;
 
-    return phrase.split(" ").map((word, wordIndex) => (
+    return text.split(" ").map((word, wordIndex) => (
       <p key={`${word}_${wordIndex}`}>
         {word.split("").map((letter, letterIdx) => {
           const currentIndex = letterIndex++;
@@ -37,6 +37,10 @@ export default function ScrollText() {
   };
 
   useEffect(() => {
+    if (!container.current) {
+      return;
+    }
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(refs.current, {
