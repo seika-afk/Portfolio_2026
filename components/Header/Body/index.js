@@ -2,7 +2,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./style.module.css";
 import { blur, translate } from "@/components/Header/anim";
-export default function Body({ links, selectedLink, setSelectedLink }) {
+export default function Body({
+  links,
+  selectedLink,
+  setSelectedLink,
+  setIsActive,
+}) {
   const getChars = (word) => {
     let chars = [];
     word.split("").forEach((char, i) => {
@@ -27,7 +32,13 @@ export default function Body({ links, selectedLink, setSelectedLink }) {
       {links.map((link, index) => {
         const { title, href } = link;
         return (
-          <Link key={`l_${index}`} href={href}>
+          <Link
+            key={`l_${index}`}
+            href={href}
+            onClick={() => {
+              setIsActive(false);
+            }}
+          >
             <motion.p
               onMouseOver={() => {
                 setSelectedLink({ isActive: true, index });

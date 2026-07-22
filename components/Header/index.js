@@ -1,6 +1,5 @@
 "use client";
 import styles from "./style.module.css";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { opacity, background } from "./anim";
@@ -25,7 +24,9 @@ export default function index() {
     <div
       className={`${styles.header} ${!isVisible ? styles.headerHidden : ""}`}
     >
-      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
+      <AnimatePresence mode="wait">
+        {isActive && <Nav setIsActive={setIsActive} />}
+      </AnimatePresence>
       <div className={styles.bar}>
         <div
           onClick={() => {

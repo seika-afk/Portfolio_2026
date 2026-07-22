@@ -15,23 +15,23 @@ const links = [
   },
   {
     title: "Services",
-    href: "/",
+    href: "#services",
     src: "/services.png",
   },
   {
     title: "Projects",
-    href: "/about",
+    href: "#projects",
     src: "/projects.png",
   },
 
   {
     title: "Contact",
-    href: "/contact",
+    href: "#contact",
     src: "/contact.png",
   },
 ];
 
-export default function Index() {
+export default function Index({ setIsActive }) {
   const [selectedLink, setSelectedLink] = useState({
     isActive: false,
     index: 0,
@@ -51,6 +51,7 @@ export default function Index() {
             links={links}
             selectedLink={selectedLink}
             setSelectedLink={setSelectedLink}
+            setIsActive={setIsActive}
           />
           <Footer />
         </div>

@@ -177,9 +177,9 @@ const MainPage: React.FC = () => {
           className="order-2 ml-20 flex items-end justify-end md:order-1 md:col-span-5"
         >
           <img
-            src="/main2.png"
+            src="/pfp1.png"
             alt="Portrait"
-            className="illus mx-auto h-auto w-full max-w-[300px] object-contain md:max-w-[340px] scale-130 translate-x-6 md:translate-x-10"
+            className="illus mx-auto h-auto w-full max-w-[300px] object-contain md:max-w-[340px] scale-130 translate-x-0 md:translate-x-0"
           />
         </div>
 
