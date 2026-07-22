@@ -244,10 +244,12 @@ const MainPage: React.FC = () => {
                 <span className="font-body absolute inset-y-0 right-0 z-0 flex items-center pr-4 whitespace-nowrap text-[#F3ECE0] text-sm opacity-0 transition-all duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/contact:translate-x-[110%] group-hover/contact:opacity-100 pointer-events-none">
                   via Email
                 </span>
+                <a href="mailto:afkseika@gmail.com">
                 <button className="group/fill relative z-10 hover:text-white cursor-pointer overflow-hidden rounded-full px-3 py-2 bg-[#F3F3F1] text-[#0F0F10] text-sm font-medium tracking-wide">
                   <span className="absolute inset-0 bg-[#DEA5A4] translate-y-full transition-transform duration-[450ms] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover/fill:translate-y-0" />
                   <span className="relative z-10">Contact Me! </span>
-                </button>
+                  </button>
+                </a>
               </div>{" "}
             </div>
           </div>
