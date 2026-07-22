@@ -169,24 +169,24 @@ const MainPage: React.FC = () => {
       {/* hero */}
       <section
         ref={sectionRef}
-        className="cursor-scope relative grid min-h-[calc(100vh-88px)] grid-cols-1 items-center gap-10 px-6 pb-24 pt-10 md:grid-cols-12 md:px-16 md:pt-6"
+        className="cursor-scope relative flex min-h-[calc(100vh-88px)] flex-col items-center justify-center gap-10 px-6 pb-24 pt-10 text-center md:flex-row md:px-16 md:pt-6"
       >
         {/* image — blurs on hover */}
         <div
           ref={imageRef}
-          className="order-2 ml-20 flex items-end justify-end md:order-1 md:col-span-5"
+          className="order-2 flex items-center justify-center md:order-1 md:w-5/12 md:justify-end md:pr-10 lg:pr-16"
         >
           <img
             src="/pfp1.png"
             alt="Portrait"
-            className="illus mx-auto h-auto w-full max-w-[300px] object-contain md:max-w-[340px] scale-130 translate-x-0 md:translate-x-0"
+            className="illus h-auto w-full max-w-[300px] object-contain md:max-w-[340px] scale-130 translate-x-0 md:translate-x-8 lg:translate-x-12"
           />
         </div>
 
         {/* content */}
-        <div className="order-1 md:order-2 md:col-span-7">
+        <div className="order-1 flex w-full flex-col items-center md:order-2 md:w-7/12">
           {/* everything above Gagan — blurs on hover */}
-          <div ref={topRef}>
+          <div ref={topRef} className="flex flex-col items-center">
             <h1 className="font-display italic mb-1 text-[64px] leading-[0.95] md:text-[104px] md:leading-[0.9]">
               Hey,
             </h1>
@@ -205,7 +205,7 @@ const MainPage: React.FC = () => {
           </div>
 
           {/* everything below Gagan — blurs on hover */}
-          <div ref={restRef}>
+          <div ref={restRef} className="flex flex-col items-center">
             <p className="font-mono mb-10 min-h-[28px] text-[15px] text-[#A39B8C] md:text-[18px]">
               {displayText}
               <span className="cursor-blink">|</span>
